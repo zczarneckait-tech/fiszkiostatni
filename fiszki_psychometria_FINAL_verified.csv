@@ -1,0 +1,472 @@
+front,back
+"Jeżeli chcemy mieć pewność, że spośród dwóch kandydatów wybieramy rzeczywiście lepszego, to oceniając różnicę w poziomie wykonania testu przez każdego z kandydatów powinniśmy wziąć pod uwagę:
+a) błąd standardowy dla wybranego przedziału ufności
+b) błąd standardowy różnicy między rzetelnościami testów
+c) błąd standardowy dla wyniku testowego
+d) błąd standardowy różnicy między dwoma wynikami",d
+"Wielkość współczynnika korelacji pomiędzy wynikami nowego testu a wynikami testu już istniejącego może być wykorzystana jako dowód trafności:
+a) treściowej
+b) teoretycznej
+c) fasadowej
+d) logicznej",b
+"Jeżeli interesuje nas odpowiedź na pytanie, czy wszystkie pozycje testu mierzą tę samą cechę psychologiczną, to możemy zastosować współczynnik rzetelności typu:
+a) połówkowania
+b) test–retest
+c) homogeniczności
+d) dla form równoległych",c
+"Gdy test psychologiczny jest wykorzystywany do rekrutacji w konkretnej organizacji i wykorzystywane w tym celu normy zostały opracowane na próbie kandydatów tej organizacji, to jest to przykład zastosowania norm:
+a) organizacyjnych
+b) narodowych
+c) lokalnych
+d) instytucjonalnych",c
+"Jeżeli nie ma żadnych innych wskazań, to średni współczynnik trudności testu, który ma w maksymalnym stopniu różnicować badaną populację, powinien:
+a) wynosić 50%
+b) mieścić się w zakresie od 0% do 100%
+c) być równy wyznaczonemu punktowi selekcji
+d) zostać wyznaczony na podstawie właściwości rozkładu normalnego",a
+"Jeżeli wynik osoby A w teście inteligencji równy jest 16 punktom, a półprzedział ufności (PU) dla alfa = 0,15 w tym teście wynosi 2 punkty, dla alfa = 0,10 wynosi 3 punkty, a dla alfa = 0,05 wynosi 4 punkty, to wynik prawdziwy osoby A, z 90% pewnością, znajduje się w przedziale:
+a) (14; 18)
+b) (16; 16)
+c) (12; 20)
+d) (13; 19)",d
+"Które z poniższych stwierdzeń nie jest prawdziwe:
+a) norma psychometryczna jest to standard ilościowy, wyznaczony przez średnią lub inną miarę tendencji centralnej
+b) norma psychometryczna jest to typowy wynik w teście
+c) norma psychometryczna opisuje właściwy poziom wykonania testu
+d) norma psychometryczna pozwala na ocenę, jak osoba badana wypada na tle innych osób",c
+"Wynik wyrażony w jednostkach IQ Wechslera, to:
+a) wynik standardowy
+b) wynik surowy jaki osoba badana otrzymała w teście inteligencji
+c) inna forma prezentowania centyli
+d) wynik odzwierciedlający standardowy błąd pomiaru",a
+"W poniższym zdaniu brakuje jednego wyrazu:
+„Analiza różnic międzygrupowych, zastosowana do badania trafności, służy do określania trafności (………)”
+a) diagnostycznej
+b) treściowej
+c) teoretycznej
+d) prognostycznej",c
+"W poniższym zdaniu brakuje jednego wyrazu:
+„Współczynnik rzetelności jest operacyjnie wyrażany za pomocą (………)”
+a) średniej arytmetycznej
+b) odchylenia standardowego
+c) wariancji
+d) współczynnika korelacji",d
+"W statystyce wyróżnia się dwa rodzaje błędów: błąd systematyczny oraz błąd losowy. Który z tych błędów ma podstawowe znaczenie w teorii rzetelności?
+a) błąd systematyczny
+b) błąd losowy
+c) oba rodzaje błędu mają znaczenie
+d) żaden z tych błędów",b
+"Metoda tzw. „instrukcji szczerości” stosowana przy kontrolowaniu zmiennej aprobaty społecznej:
+a) jest metodą nieskuteczną
+b) powinna być stosowana już na etapie konstrukcji kwestionariusza
+c) powinna być stosowana na etapie stosowania kwestionariusza
+d) zakłada stosowanie wyłącznie pozycji neutralnych",c
+"Tzw. styl odpowiadania w kwestionariuszu jest to:
+a) skłonność do udzielania odpowiedzi niezależnie od treści pozycji testowych
+b) skłonność do udzielania odpowiedzi zależnie od treści pozycji testowych
+c) skłonność do udzielania odpowiedzi diagnostycznych
+d) skłonność do udzielania odpowiedzi niediagnostycznych",a
+"Parametry skali staninowej to:
+a) M = 5; SD = 2
+b) M = 5,5; SD = 2
+c) M = 5; SD = 2,5
+d) M = 5,5; SD = 2,5",a
+"Przeprowadzono badanie testem psychologicznym. Osoba obliczająca wyniki zauważyła, że osoba badana zaznaczyła prawie wszystkie odpowiedzi po lewej stronie skali odpowiedzi. Z jakim problemem mamy tu do czynienia?
+a) niską mocą dyskryminacyjną pozycji
+b) złym zdefiniowaniem konstruktu
+c) aprobatą społeczną
+d) stylami odpowiadania",d
+"Które z poniższych stwierdzeń jest prawdziwe?
+a) Standaryzacja procedury badania to interpretacja wyniku
+b) Standaryzacja procedury badania to tworzenie jednolitych warunków badania
+c) Standaryzacja procedury badania to zbieranie norm
+d) Standaryzacja procedury badania to uwzględnianie błędu pomiaru",b
+"Badacz konstruuje test. Zadania mają współczynniki trudności: T1 = 0%, T2 = 55%, T3 = 92%, T4 = 100%. Które zadanie jest najłatwiejsze?
+a) T1
+b) T2
+c) T3
+d) T4",d
+"Jeżeli kryterium doboru pozycji testowych do ostatecznej wersji testu jest współczynnik mocy dyskryminacyjnej, to powinniśmy wybrać pozycje:
+a) wysokie dodatnie
+b) wysokie ujemne
+c) niskie dodatnie
+d) niskie ujemne",a
+"Aby test mógł być stosowany w diagnozie indywidualnej, jego rzetelność powinna oscylować wokół:
+a) 0,6
+b) 0,7
+c) 0,8
+d) 0,9",c
+"Skala centylowa jest skalą:
+a) nominalną
+b) ilorazową
+c) interwałową
+d) porządkową",d
+"Transkrypcję jako strategię adaptacji kulturowej testu charakteryzuje:
+a) maksymalna wierność treści i formy
+b) budowanie testu od początku
+c) dopuszczanie dowolnych modyfikacji
+d) wprowadzanie licznych zmian kulturowych",a
+"Kontaminacja kryterium pojawia się najczęściej wtedy, gdy osoba oceniająca:
+a) działa rutynowo
+b) ma dostęp do wyników testowych
+c) nie zna zasad oceny
+d) działa ateoretycznie",b
+"Wynik testowy równy 55 centylowi oznacza, że:
+a) 55% osób uzyskało wynik taki sam lub wyższy
+b) 45% osób uzyskało wynik wyższy od średniego
+c) 45% osób uzyskało wynik niższy od średniego
+d) 55% osób uzyskało wynik taki sam lub niższy",d
+"W badaniach rzetelności metodą test–retest długa przerwa czasowa jest źródłem zmian o charakterze:
+a) klinicznym
+b) losowym
+c) rozwojowym
+d) przypadkowym",c
+"Jeżeli diagnosta chce różnicować bardzo niskie i bardzo wysokie wyniki, powinien użyć skali:
+a) stenowej
+b) staninowej
+c) T
+d) tetronowej",c
+"Trafność treściowa to zakres, w jakim pozycje testowe:
+a) odzwierciedlają kierunki interpretacji
+b) spełniają warunek obiektywności
+c) informują o „dobroci” testu
+d) reprezentują dziedzinę pomiaru",d
+"„Właściwość opisująca, czy test mierzy to, do mierzenia czego został skonstruowany”, to definicja:
+a) trafności
+b) normalizacji
+c) rzetelności
+d) obiektywności",a
+"Jednym z kryteriów formalnych przy tworzeniu testu jest współczynnik trudności. Jeśli chcemy wybrać 15% najlepszych kandydatów, średnia trudność testu powinna wynosić:
+a) 15%
+b) 50%
+c) 75%
+d) 85%",a
+"Technika ślepej diagnozy jest stosowana przy określaniu:
+a) trafności
+b) rzetelności
+c) obiektywności
+d) reguł badania",c
+"Znajomość współczynnika mocy dyskryminacyjnej pozwala wskazać pozycje:
+a) mierzące inną zmienną
+b) należące do innego testu
+c) które nie różnicują populacji
+d) mierzące zachowania pozatestowe",c
+"Zgodnie ze standardami postępowania testy psychologiczne nie powinny być powszechnie udostępniane. Który powód jest najmniej istotny?
+a) naruszenie praw autorskich
+b) wcześniejsza znajomość testu
+c) możliwość szkód przy złym użyciu
+d) powszechna znajomość materiału",d
+"Procedura standaryzacji dotyczy:
+a) przebiegu badania testem
+b) obliczania wyników
+c) interpretacji wyników
+d) wszystkich trzech powyżej wymienionych elementów",d
+"Jeśli chodzi o przebieg badania testem, to procedura standaryzacji dotyczy:
+a) zasad ogólnych, instrukcji dla osoby badającej i badanej oraz zakresu pomocy
+b) warunków fizycznych badania (oświetlenie, temperatura)
+c) sposobu zliczania punktów",a
+"Jeśli chodzi o obliczanie wyników, to procedura standaryzacji dotyczy:
+a) norm
+b) klucza oceny odpowiedzi oraz sposobu zliczania wyników
+c) sposobu wypełniania arkusza testowego",b
+"Jeśli chodzi o interpretowanie wyników, to procedura standaryzacji dotyczy:
+a) statystyk
+b) norm
+c) klucza odpowiedzi",b
+"Standaryzacja zapewnia:
+a) zróżnicowanie procedury badania
+b) ujednolicenie procedury badania testem
+c) przyspieszenie procedury badania",b
+"Wyrównywanie warunków badania może być niekorzystne dla niektórych osób — mowa tu o zjawisku:
+a) stronniczości
+b) paradoksu standaryzacji
+c) dyskryminacji",b
+"Testy psychologiczne __________ wystandaryzowane, aby możliwa była __________ wyników w oparciu o normy:
+a) mogą być / klasyfikacja
+b) nie powinny być / adaptacja
+c) powinny być / interpretacja",c
+"Każde odstępstwo od standardowych warunków badania sprawia, że:
+a) wyniki są coraz bardziej zindywidualizowane
+b) wyniki można interpretować jedynie jakościowo
+c) wyniki są precyzyjne",b
+"Jednym z elementów procedury standaryzacji jest instrukcja. Jaką rolę pełni?
+a) określa zakres i formę pomocy osobie badanej
+b) określa tylko czas badania
+c) określa warunki fizyczne badania",a
+"Konsekwencją nieprzestrzegania instrukcji jest:
+a) brak możliwości odnoszenia się do norm
+b) brak możliwości porównywania wyników
+c) obydwie odpowiedzi są poprawne",c
+"Czy psycholog może przepisać test na komputer i stosować go zamiast wersji papierowej?
+a) tak, normy będą te same
+b) nie, nie wiadomo czy normy są takie same
+c) nie, ponieważ jest to nieetyczne",b
+"Czy stwierdzenie: „Standaryzacja pozwala na rzeczywiste ujednolicenie sytuacji badanych” jest prawdziwe?
+a) prawdziwe
+b) fałszywe",b
+"Czy ścisłe przestrzeganie instrukcji może stawiać osoby badane w różnych sytuacjach psychologicznych?
+a) tak
+b) nie",a
+"Który czynnik może przyczyniać się do paradoksu standaryzacji?
+a) instrukcja
+b) osoba badająca",a
+"Czy sposób badania (indywidualny vs grupowy) jest czynnikiem neutralnym?
+a) prawda
+b) nieprawda
+c) tekst nie pozwala odpowiedzieć",b
+"Obiektywność zapewnia:
+a) jednolitość przebiegu badania
+b) rzetelne wyniki
+c) jednolitość reguł oceniania odpowiedzi",c
+"Czy obiektywność jest tym samym co standaryzacja?
+a) nie – dotyczą różnych aspektów
+b) tak – to to samo
+c) nie – test może być wystandaryzowany, ale nieobiektywny",a
+"Do badania obiektywności służy technika:
+a) sędziów ekspertów
+b) ślepej diagnozy
+c) klucza",b
+"Badanie obiektywności techniką ślepej diagnozy polega na rozesłaniu:
+a) tego samego arkusza do badanych
+b) tego samego arkusza do oceniających
+c) wielu arkuszy do oceniających",b
+"Test bez klucza oceniania:
+a) może być obiektywny
+b) nie powinien być stosowany
+c) może być stosowany dowolnie",b
+"Test z pytaniami otwartymi bez klucza oceniania jest w porównaniu do testu wyboru:
+a) bardziej obiektywny
+b) mniej obiektywny
+c) tak samo obiektywny",b
+"Rzetelność odpowiada na pytanie:
+a) czy mierzymy to, co chcieliśmy mierzyć
+b) jak dobrze mierzymy to, co mierzymy",b
+"Rzetelność testu wskazuje na stosunek:
+a) podobieństw do zmienności wyników
+b) zmienności wyników do stabilności
+c) błędów pomiarowych do różnic indywidualnych
+d) prawdziwych różnic do błędu losowego",d
+"Wskaźnik rzetelności to:
+a) korelacja między wynikami dwóch testów
+b) korelacja wyników prawdziwych i otrzymanych
+c) odsetek wariancji wyników przypisanej wynikom prawdziwym",c
+"Źródło błędów losowych związanych z osobą badaną występuje w metodzie:
+a) wersji alternatywnych bez przerwy
+b) test–retest z przerwą
+c) wersji alternatywnych z przerwą
+d) test–retest bez przerwy",d
+"Jaki współczynnik szacuje się metodą test–retest z przerwą?
+a) równoważności międzytestowej
+b) wiarygodności testu
+c) stabilności bezwzględnej
+d) stabilności względnej",c
+"Czym są testy równoległe?
+a) mają identyczne pozycje
+b) mierzą to samo, ale mają różne pozycje",b
+"Czynniki wpływające na wielkość rzetelności to:
+a) długość testu i liczba cech
+b) liczba cech i rodzaj skali
+c) długość testu i zmienność cechy
+d) zmienność cechy i rodzaj skali",a
+"Zapamiętanie odpowiedzi w badaniu test–retest prowadzi do przeszacowania rzetelności:
+a) prawda
+b) fałsz",a
+"Im wyższa alfa Cronbacha, tym większa heterogeniczność narzędzia:
+a) prawda
+b) fałsz",b
+"Wynik surowy można interpretować psychologicznie:
+a) prawda
+b) fałsz",b
+"Skorzystanie z norm pozwala zinterpretować wynik osoby badanej oraz porównać go z wynikami innych osób należących do tej samej grupy odniesienia:
+a) prawda
+b) fałsz",a
+"Przystępując do normalizacji wyników testowych należy dobrze zdefiniować grupę odniesienia, dla której test ma być stosowany:
+a) prawda
+b) fałsz",a
+"Norma opisuje poziom __________ wykonania testu:
+a) zwykłego
+b) typowego
+c) średniego",b
+"Grupa normalizacyjna to inaczej grupa:
+a) odniesienia
+b) porównawcza",a
+"Norma psychometryczna to standard wyznaczony przez:
+a) wariancję
+b) odchylenie standardowe
+c) kurtozę
+d) średnią",b
+"Wiele norm w podręcznikach polskich testów nie spełnia już jednego z tych kryteriów. Którego?
+a) aktualność
+b) reprezentatywność
+c) adekwatność",a
+"Skala T rozciąga się od –X do X odchylenia standardowego od średniej:
+a) 5
+b) 4
+c) 3",a
+"W skali stenowej jest 9 jednostek, średnia wynosi 4,5 a odchylenie standardowe 2:
+a) prawda
+b) fałsz",b
+"W skali stenowej jest:
+a) 9 jednostek, M = 4,5, SD = 2
+b) 10 jednostek, M = 5,5, SD = 2
+c) 150 jednostek, M = 100, SD = 15
+d) 21 jednostek, M = 10, SD = 4",b
+"Rozwiń skrót „sten”:
+a) standard ten",a
+"Jeżeli znasz rozwinięcie skrótu „sten”, to wiesz też ile jednostek ma skala stenowa:
+a) 9
+b) 10",b
+"Normy centylowe to normy typu:
+a) standardowego
+b) rangowego
+c) równoważnikowego
+d) zorientowanego na kryterium",b
+"Centyle to wyniki procentowe:
+a) prawda
+b) fałsz",b
+"Test ma 100 pytań i ma różnicować osoby o skrajnie niskich i skrajnie wysokich wynikach. Wyniki surowe przeliczymy raczej na skalę:
+a) krótszą, np. stenową
+b) dłuższą, np. skalę T",a
+"Każda adaptacja testu jest adaptacją kulturową:
+a) prawda
+b) fałsz",b
+"Przystępując do adaptacji narzędzia możemy przyjąć jedną z dwóch perspektyw:
+a) emikalną (idiograficzną) lub etikalną (nomotetyczną)
+b) etikalną (idiograficzną) lub emikalną (nomotetyczną)",a
+"Jeżeli badana cecha ma charakter etikalny, należy sprawdzić, czy przejawia się w drugiej kulturze tak samo lub podobnie:
+a) prawda
+b) fałsz",a
+"Według założeń adaptacji kulturowej należy rozstrzygnąć, czy spełniona jest zasada równoważności:
+a) międzytestowej
+b) międzygrupowej
+c) teorii, operacjonalizacji, wskaźników, trudności
+d) konstruktu, funkcjonalna zachowań, wskaźników konstruktu teoretycznego, psychometryczna",d
+"Której zasady równoważności dotyczy opis:
+„Po rozstrzygnięciu, że konstrukt teoretyczny ma tę samą treść w kulturze docelowej, badacz może przystąpić do adaptacji narzędzia”?
+a) równoważności konstruktu",a
+"Której zasady równoważności dotyczy opis:
+„Członkowie różnych kultur zachowują się podobnie w podobnych sytuacjach, by zrealizować równoważne cele”?
+a) równoważności funkcjonalnej zachowań",a
+"Równoważność psychometryczna dotyczy równoważności na poziomie rzetelności, trafności i normalizacji:
+a) prawda
+b) fałsz",a
+"Jakie są strategie adaptacji testów według Drwala (1995)?
+a) empiryczna i teoretyczna
+b) transkrypcja, translacja, trawestacja, parafraza, rekonstrukcja
+c) parafraza, metafora, opis
+d) emikalna i etikalna",b
+"Strategia __________ zakłada, że zarówno konstrukty, jak i zachowania są uniwersalne kulturowo:
+a) transkrypcji",a
+"Strategia __________ zakłada, że konstrukty są uniwersalne, ale pojęcia używane do opisu zachowania nie:
+a) translacji",a
+"Swobodne tłumaczenie oryginału z licznymi zmianami uzasadnionymi względami psychologicznymi i językowymi to:
+a) rekonstrukcja
+b) trawestacja
+c) parafraza
+d) projektowanie",c
+"Wybór strategii parafrazy podyktowany jest założeniem, że konstrukty są uniwersalne, ale zachowania nie:
+a) prawda
+b) fałsz",a
+"Rekonstrukcja zakłada maksymalnie wierne oddanie intencji autora, ale prowadzi do opracowania nowego narzędzia:
+a) prawda
+b) fałsz",a
+"Jeżeli punktem wyjścia konstrukcji testu jest sformułowanie jasnych założeń teoretycznych dotyczących mierzonego konstruktu, to jest to:
+a) empiryczna strategia konstrukcji testu
+b) zewnętrzna strategia konstrukcji testu
+c) racjonalna (teoretyczna) strategia konstrukcji testu
+d) indukcyjna strategia konstrukcji testu",c
+"Strategia teoretyczna (racjonalna, dedukcyjna) zakłada, że:
+a) teoria jest zastępowana wiedzą o kryterium
+b) teoria jest punktem wyjścia konstrukcji testu
+c) definicje konstruktów powstają post factum
+d) pozycje testowe dobiera się na podstawie analizy danych",b
+"Celem strategii empirycznej (instrumentalnej, zewnętrznej) jest:
+a) pomiar konstruktów postulowanych przez teorię
+b) identyfikacja podstawowych wymiarów zachowania
+c) prognoza realnego kryterium pozapsychologicznego
+d) maksymalna zgodność z teorią psychologiczną",c
+"W strategii empirycznej:
+a) teoria jest kluczowym elementem konstrukcji testu
+b) teoria bywa niewystarczająca lub nieobecna
+c) pozycje testowe muszą być wyprowadzone z definicji konstruktu
+d) nie wykorzystuje się grup kryterialnych",b
+"Konsekwencją stosowania strategii empirycznej może być:
+a) wysoka jednorodność teoretyczna narzędzia
+b) mnożenie konstruktów o niejasnym statusie psychologicznym
+c) brak potrzeby normalizacji
+d) brak potrzeby badania trafności",b
+"Strategia wewnętrzna (indukcyjna) polega na:
+a) dedukowaniu pozycji z teorii
+b) porównywaniu grup kryterialnych
+c) eksploracyjnej analizie danych i definiowaniu wymiarów post factum
+d) adaptacji narzędzi z innych kultur",c
+"Strategia indukcyjna jest związana z:
+a) klasyczną teorią testów
+b) teorią ugruntowaną
+c) podejściem nomotetycznym
+d) strategią empiryczną",b
+"Teoria ugruntowana zakłada, że:
+a) hipotezy są weryfikowane po zakończeniu zbierania danych
+b) teoria powstaje przed badaniem
+c) zbieranie danych i budowanie teorii przeplatają się
+d) analiza danych nie wpływa na teorię",c
+"Celem analizy zadań jest:
+a) określenie trafności kryterialnej testu
+b) określenie parametrów pozycji testowych
+c) obliczenie norm testowych
+d) interpretacja wyników",b
+"Pozycja testowa jest poprawna rzeczowo, gdy:
+a) jest zrozumiała językowo
+b) daje wysoką rzetelność
+c) da się ją wyprowadzić z teorii mierzonej cechy
+d) różnicuje grupy skrajne",c
+"Poprawność językowa pozycji testowej dotyczy:
+a) jej związku z konstruktem
+b) jednoznaczności i prostoty sformułowania
+c) wartości współczynnika trudności
+d) mocy dyskryminacyjnej",b
+"Wskaźnik trudności zadania (T) to:
+a) liczba osób odpowiadających poprawnie
+b) stosunek liczby odpowiedzi poprawnych do liczby badanych
+c) korelacja pozycji z wynikiem ogólnym
+d) różnica między grupą górną i dolną",b
+"Im wyższa wartość wskaźnika trudności (T), tym zadanie jest:
+a) trudniejsze
+b) łatwiejsze
+c) bardziej dyskryminujące
+d) mniej trafne",b
+"Aby pozycja testowa maksymalnie różnicowała badaną grupę, jej wskaźnik trudności powinien być zbliżony do:
+a) 0%
+b) 25%
+c) 50%
+d) 100%",c
+"Współczynnik mocy dyskryminacyjnej (D) informuje o:
+a) trudności zadania
+b) liczbie poprawnych odpowiedzi
+c) stopniu różnicowania badanej populacji
+d) poziomie rzetelności testu",c
+"Pozycja o dodatniej mocy dyskryminacyjnej:
+a) jest częściej rozwiązywana przez osoby z niskimi wynikami
+b) zmniejsza wariancję wyników testu
+c) różnicuje badanych zgodnie z innymi pozycjami testu
+d) powinna zostać usunięta",c
+"Pozycja o ujemnej mocy dyskryminacyjnej:
+a) zwiększa wariancję wyników
+b) różnicuje badanych przeciwnie niż inne pozycje
+c) jest zawsze poprawnie skonstruowana
+d) nie wpływa na wyniki testu",b
+"Kryterium selekcji pozycji testowych D ≥ 0,40 oznacza, że:
+a) pozycja powinna zostać usunięta
+b) pozycja ma znaczenie marginalne
+c) pozycja wymaga niewielkich zmian
+d) pozycja może zostać włączona do testu",d
+"Zakres 0,20 ≤ D ≤ 0,29 oznacza, że pozycja:
+a) jest bardzo dobra
+b) wymaga niewielkich zmian
+c) ma znaczenie marginalne i wymaga poważnych zmian
+d) powinna być bezwzględnie usunięta",c
+"Poprawka na zgadywanie jest stosowana, ponieważ:
+a) zgadywanie zwiększa rzetelność
+b) część odpowiedzi poprawnych może być efektem przypadku
+c) eliminuje błędy systematyczne
+d) zwiększa trudność testu",b

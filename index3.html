@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fiszki CSV</title>
+  <style>
+    :root { --bg:#0b0c10; --card:#12141b; --muted:#a7b0c0; --text:#e9eef7; --accent:#6ea8fe; --line:#232837; --bad:#ff6b6b; --good:#4ade80; }
+    *{ box-sizing:border-box; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    body{ margin:0; background:linear-gradient(180deg,#0b0c10,#07080b); color:var(--text); }
+    .wrap{ max-width:980px; margin:0 auto; padding:22px; }
+    h1{ margin:0 0 10px; font-size:22px; }
+    .tabs{ display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 18px; }
+    .tab{
+      border:1px solid var(--line); background:transparent; color:var(--text);
+      padding:10px 12px; border-radius:12px; cursor:pointer; opacity:.85;
+    }
+    .tab.active{ border-color:var(--accent); box-shadow:0 0 0 2px rgba(110,168,254,.12); opacity:1; }
+    .panel{
+      border:1px solid var(--line); background:rgba(18,20,27,.75);
+      border-radius:18px; padding:16px; box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    }
+    .row{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:6px 10px; border:1px solid var(--line); border-radius:999px;
+      color:var(--muted); font-size:12px;
+    }
+    .btn{
+      background:var(--accent); color:#07101f; border:none; border-radius:14px;
+      padding:10px 14px; cursor:pointer; font-weight:800;
+    }
+    .btn.ghost{
+      background:transparent; color:var(--text); border:1px solid var(--line); font-weight:700;
+    }
+    .btn.danger{
+      background:transparent; color:#ffb4b4; border:1px solid #3a1f28; font-weight:700;
+    }
+    .btn.good{ background: var(--good); color:#05120a; }
+    .btn.bad{ background: var(--bad); color:#1a0707; }
+    input[type="file"], textarea {
+      width:100%; border-radius:14px; border:1px solid var(--line);
+      background:#0f1118; color:var(--text); padding:12px; outline:none;
+    }
+    textarea{ min-height:140px; resize:vertical; }
+    .hint{ color:var(--muted); font-size:13px; line-height:1.35; }
+    .grid{ display:grid; grid-template-columns:1.2fr .8fr; gap:14px; }
+    @media (max-width: 860px){ .grid{ grid-template-columns:1fr; } }
+
+    .list{ margin-top:12px; border-top:1px solid var(--line); }
+    .item{
+      padding:12px 0; border-bottom:1px solid var(--line);
+      display:flex; gap:12px; align-items:flex-start;
+    }
+    .num{ color:var(--muted); min-width:28px; text-align:right; padding-top:2px; }
+    .q{ flex:1; white-space:pre-wrap; }
+
+    .flashcard{
+      background:#0f1118; border:1px solid var(--line);
+      border-radius:18px; padding:18px; min-height:240px;
+      display:flex; flex-direction:column; gap:12px; justify-content:center;
+    }
+    .fcQ{ font-size:18px; line-height:1.35; white-space:pre-wrap; }
+    .fcA{ border-top:1px dashed var(--line); padding-top:12px; color:#d8e7ff; white-space:pre-wrap; }
+    .small{ font-size:12px; color:var(--muted); }
+    .spacer{ height:10px; }
+    .sep{ height:1px; background:var(--line); margin:12px 0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Fiszki z CSV — import (pytanie, odpowiedź) + “umiem/nie umiem”</h1>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="import">Import CSV</button>
+      <button class="tab" data-tab="study">Fiszki</button>
+    </div>
+
+    <div class="panel" id="import">
+      <div class="grid">
+        <div>
+          <div class="row" style="justify-content:space-between;">
+            <div class="badge" id="statsBadge">0 kart</div>
+            <div class="row">
+              <button class="btn ghost" id="exportBtn">Eksportuj JSON</button>
+	      <button class="btn ghost" id="refreshDefaultBtn">Odśwież z domyślnego CSV</button>
+              <button class="btn danger" id="wipeBtn">Wyczyść wszystko</button>
+            </div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <label class="small">Wybierz plik CSV (kol. 1 = pytanie, kol. 2 = odpowiedź). Nagłówki są opcjonalne.</label>
+          <input type="file" id="csvFile" accept=".csv,text/csv" />
+
+          <div class="row" style="margin-top:10px;">
+            <button class="btn" id="importFileBtn">Importuj plik</button>
+            <button class="btn ghost" id="loadExampleBtn">Wklej przykład CSV</button>
+          </div>
+
+          <div class="sep"></div>
+
+          <label class="small">Albo wklej CSV ręcznie:</label>
+          <textarea id="csvText" placeholder='Przykład:
+pytanie,odpowiedź
+"Co to jest korelacja?","Związek statystyczny między zmiennymi."
+"Czym jest hipoteza?","Przypuszczenie, które można testować."'></textarea>
+
+          <div class="row" style="margin-top:10px;">
+            <button class="btn" id="importTextBtn">Importuj z pola</button>
+            <button class="btn ghost" id="clearTextBtn">Wyczyść pole</button>
+          </div>
+
+          <p class="hint" style="margin:10px 0 0;">
+            Obsługuję separator <b>,</b> lub <b>;</b>. Cytaty <b>"..."</b> działają, więc przecinki w tekście nie psują importu.
+          </p>
+        </div>
+
+        <div>
+          <div class="badge">Podgląd (pierwsze 50)</div>
+          <div class="list" id="cardsList"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="study" style="display:none;">
+      <div class="row" style="justify-content:space-between; align-items:flex-end;">
+        <div class="row">
+          <div class="badge" id="studyBadge">0/0</div>
+          <div class="badge" id="sessionBadge">Pozostało: 0</div>
+          <label class="badge" style="cursor:pointer;">
+            <input type="checkbox" id="shuffleToggle" style="transform:translateY(1px);"/>
+            tasuj na start
+          </label>
+        </div>
+        <div class="row">
+          <button class="btn ghost" id="restartBtn">Restart sesji</button>
+          <button class="btn ghost" id="toggleAnswerBtn">Pokaż odpowiedź</button>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="flashcard">
+        <div class="fcQ" id="fcQuestion">Zaimportuj karty w zakładce „Import CSV”.</div>
+        <div class="fcA" id="fcAnswer" style="display:none;"></div>
+        <div class="small" id="fcMeta"></div>
+      </div>
+
+      <div class="row" style="justify-content:space-between; margin-top:12px;">
+        <button class="btn bad" id="dontKnowBtn">Nie umiem ❌ (na koniec)</button>
+        <button class="btn good" id="knowBtn">Umiem ✅ (usuń z sesji)</button>
+      </div>
+
+      <p class="hint" style="margin-top:12px;">
+        Zasada: <b>Nie umiem</b> → karta wraca na koniec kolejki, <b>Umiem</b> → znika z tej sesji.
+        Dane kart są zapisane w przeglądarce.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const LS_KEY = "flashcards_csv_v2";
+
+    /** @type {{id:string, q:string, a:string}[]} */
+    let cards = [];
+
+    // session queue (indices into cards)
+    /** @type {number[]} */
+    let queue = [];
+    let current = null; // index into cards
+    let showA = false;
+
+    const $ = (id) => document.getElementById(id);
+
+    function uid() {
+      return Math.random().toString(16).slice(2) + Date.now().toString(16);
+    }
+
+    function save() {
+      localStorage.setItem(LS_KEY, JSON.stringify(cards));
+      renderAll();
+    }
+    // --- AUTOLOAD CSV (GitHub Pages) ---
+const DEFAULT_CSV_URL = "./fiszki_psychometria_FINAL_verified.csv";
+
+// Wczytaj domyślną talię tylko wtedy, gdy localStorage jest pusty
+async function autoloadDefaultDeckIfEmpty() {
+  if (cards && cards.length > 0) return; // ktoś już ma talię w przeglądarce
+
+  try {
+    const res = await fetch(DEFAULT_CSV_URL, { cache: "no-store" });
+    if (!res.ok) throw new Error("Nie mogę pobrać CSV: " + res.status);
+
+    const text = await res.text();
+    const { added } = importFromCsvText(text);
+
+    // jeśli coś się wczytało, startujemy sesję i zapisujemy
+    if (added > 0) {
+      startSession();
+      save();
+      console.log("Autoload: wczytano kart:", added);
+    }
+  } catch (e) {
+    console.warn("Autoload nie zadziałał:", e);
+  }
+}
+
+
+    function load() {
+      try {
+        const raw = localStorage.getItem(LS_KEY);
+        cards = raw ? JSON.parse(raw) : [];
+      } catch {
+        cards = [];
+      }
+      startSession();
+      renderAll();
+    }
+
+    function switchTab(tab) {
+      ["import","study"].forEach(id => $(id).style.display = (id === tab) ? "block" : "none");
+      document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
+      if (tab === "study") renderStudy();
+    }
+
+    function escapeHtml(s) {
+      return String(s ?? "")
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+
+    // --- CSV parsing (simple but robust with quotes) ---
+    function detectDelimiter(text) {
+      const firstLine = text.split(/\r?\n/).find(l => l.trim().length) || "";
+      const comma = (firstLine.match(/,/g) || []).length;
+      const semi  = (firstLine.match(/;/g) || []).length;
+      return semi > comma ? ";" : ",";
+    }
+
+    function parseCsv(text) {
+      const delim = detectDelimiter(text);
+      const rows = [];
+      let i = 0, field = "", row = [];
+      let inQuotes = false;
+
+      // normalize newlines
+      text = text.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+
+      while (i < text.length) {
+        const ch = text[i];
+
+        if (inQuotes) {
+          if (ch === '"') {
+            // escaped quote?
+            if (text[i+1] === '"') { field += '"'; i += 2; continue; }
+            inQuotes = false;
+            i++;
+            continue;
+          } else {
+            field += ch;
+            i++;
+            continue;
+          }
+        } else {
+          if (ch === '"') { inQuotes = true; i++; continue; }
+          if (ch === delim) { row.push(field.trim()); field = ""; i++; continue; }
+          if (ch === "\n") {
+            row.push(field.trim());
+            rows.push(row);
+            row = [];
+            field = "";
+            i++;
+            continue;
+          }
+          field += ch;
+          i++;
+        }
+      }
+      // last field
+      if (field.length || row.length) {
+        row.push(field.trim());
+        rows.push(row);
+      }
+
+      // remove empty rows
+      const cleaned = rows
+        .map(r => r.map(x => (x ?? "").trim()))
+        .filter(r => r.some(x => x.length));
+
+      return cleaned;
+    }
+
+    function looksLikeHeader(r) {
+      if (!r || r.length < 2) return false;
+      const a = (r[0] || "").toLowerCase();
+      const b = (r[1] || "").toLowerCase();
+      const headerWords = ["pytanie","pytania","question","q","front","termin","hasło","odpowiedź","answer","a","back","definicja"];
+      const hits = headerWords.some(w => a.includes(w)) && headerWords.some(w => b.includes(w));
+      return hits;
+    }
+
+    function importFromCsvText(text) {
+      const rows = parseCsv(text);
+      if (!rows.length) return { added: 0, skipped: 0 };
+
+      let start = 0;
+      if (looksLikeHeader(rows[0])) start = 1;
+
+      let added = 0, skipped = 0;
+      for (let i = start; i < rows.length; i++) {
+        const r = rows[i];
+        const q = (r[0] || "").trim();
+        const a = (r[1] || "").trim();
+        if (!q) { skipped++; continue; }
+        cards.push({ id: uid(), q, a });
+        added++;
+      }
+      return { added, skipped };
+    }
+
+    // --- session logic ---
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
+
+    function startSession() {
+      queue = cards.map((_, idx) => idx);
+      if ($("shuffleToggle")?.checked) shuffle(queue);
+      current = queue.shift() ?? null;
+      showA = false;
+    }
+
+    function currentCard() {
+      if (current === null || current === undefined) return null;
+      return cards[current] || null;
+    }
+
+    function markKnow() {
+      // "umiem" => do nothing else; card removed from session by not re-adding it
+      current = queue.shift() ?? null;
+      showA = false;
+      renderStudy();
+    }
+
+    function markDontKnow() {
+      // "nie umiem" => push current to end, then take next
+      if (current !== null && current !== undefined) queue.push(current);
+      current = queue.shift() ?? null;
+      showA = false;
+      renderStudy();
+    }
+
+    // --- rendering ---
+    function renderStats() {
+      $("statsBadge").textContent = `${cards.length} kart`;
+    }
+
+    function renderList() {
+      const list = $("cardsList");
+      list.innerHTML = "";
+      if (!cards.length) {
+        list.innerHTML = `<p class="hint" style="margin:12px 0;">Brak kart. Zaimportuj CSV.</p>`;
+        return;
+      }
+      const max = Math.min(cards.length, 50);
+      for (let i = 0; i < max; i++) {
+        const c = cards[i];
+        const el = document.createElement("div");
+        el.className = "item";
+        el.innerHTML = `
+          <div class="num">${i+1}.</div>
+          <div class="q"><b>${escapeHtml(c.q)}</b><div class="small" style="margin-top:6px;">${escapeHtml(c.a)}</div></div>
+        `;
+        list.appendChild(el);
+      }
+      if (cards.length > 50) {
+        const more = document.createElement("div");
+        more.className = "hint";
+        more.style.margin = "12px 0 0";
+        more.textContent = `… i ${cards.length - 50} kolejnych.`;
+        list.appendChild(more);
+      }
+    }
+
+    function renderStudy() {
+      const c = currentCard();
+      const total = cards.length;
+      const remaining = (current ? 1 : 0) + queue.length;
+
+      $("studyBadge").textContent = total ? `Sesja: ${total - remaining}/${total}` : "0/0";
+      $("sessionBadge").textContent = `Pozostało: ${remaining}`;
+
+      if (!c) {
+        $("fcQuestion").textContent = cards.length ? "Sesja zakończona ✅ (wszystko oznaczone jako „umiem”). Kliknij „Restart sesji”, jeśli chcesz powtórzyć." : "Zaimportuj karty w zakładce „Import CSV”.";
+        $("fcAnswer").style.display = "none";
+        $("fcAnswer").textContent = "";
+        $("fcMeta").textContent = "";
+        $("toggleAnswerBtn").textContent = "Pokaż odpowiedź";
+        $("knowBtn").disabled = true;
+        $("dontKnowBtn").disabled = true;
+        return;
+      }
+
+      $("knowBtn").disabled = false;
+      $("dontKnowBtn").disabled = false;
+
+      $("fcQuestion").textContent = c.q;
+      $("fcAnswer").textContent = c.a?.trim() ? c.a : "(brak odpowiedzi)";
+      $("fcAnswer").style.display = showA ? "block" : "none";
+      $("toggleAnswerBtn").textContent = showA ? "Ukryj odpowiedź" : "Pokaż odpowiedź";
+
+      const pos = total ? (total - remaining + 1) : 1;
+      $("fcMeta").textContent = `Karta w sesji: ${pos} • Nie umiem → wraca na koniec kolejki`;
+    }
+
+    function renderAll() {
+      renderStats();
+      renderList();
+      renderStudy();
+    }
+
+    // --- events ---
+    document.querySelectorAll(".tab").forEach(btn => {
+      btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+    });
+
+    $("importFileBtn").addEventListener("click", async () => {
+      const file = $("csvFile").files?.[0];
+      if (!file) return;
+      const text = await file.text();
+      const { added, skipped } = importFromCsvText(text);
+      startSession();
+      save();
+      alert(`Zaimportowano: ${added} kart. Pominięto: ${skipped}.`);
+    });
+
+    $("importTextBtn").addEventListener("click", () => {
+      const text = $("csvText").value.trim();
+      if (!text) return;
+      const { added, skipped } = importFromCsvText(text);
+      $("csvText").value = "";
+      startSession();
+      save();
+      alert(`Zaimportowano: ${added} kart. Pominięto: ${skipped}.`);
+    });
+
+    $("clearTextBtn").addEventListener("click", () => $("csvText").value = "");
+
+    $("loadExampleBtn").addEventListener("click", () => {
+      $("csvText").value =
+`pytanie,odpowiedź
+"Co to jest korelacja?","Związek statystyczny między zmiennymi."
+"Czym jest hipoteza?","Przypuszczenie, które można testować."
+"Prawo wielkich liczb","Częstości z prób zbliżają się do prawdopodobieństwa przy dużej liczbie prób."`;
+    });
+
+    $("wipeBtn").addEventListener("click", () => {
+      if (!confirm("Na pewno usunąć wszystkie karty?")) return;
+      cards = [];
+      startSession();
+      save();
+    });
+
+    $("exportBtn").addEventListener("click", () => {
+      const blob = new Blob([JSON.stringify(cards, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "fiszki.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    $("restartBtn").addEventListener("click", () => {
+      startSession();
+      renderStudy();
+    });
+
+    $("shuffleToggle").addEventListener("change", () => {
+      // tylko wpływa na startSession (tasowanie na start)
+    });
+
+    $("toggleAnswerBtn").addEventListener("click", () => {
+      showA = !showA;
+      renderStudy();
+    });
+
+    $("knowBtn").addEventListener("click", markKnow);
+    $("dontKnowBtn").addEventListener("click", markDontKnow);
+
+    // keyboard in study: space=answer, Y=umiem, N=nie umiem
+    window.addEventListener("keydown", (e) => {
+      const tabVisible = $("study").style.display !== "none";
+      if (!tabVisible) return;
+
+      if (e.code === "Space") { e.preventDefault(); $("toggleAnswerBtn").click(); }
+      if (e.key.toLowerCase() === "y") $("knowBtn").click();
+      if (e.key.toLowerCase() === "n") $("dontKnowBtn").click();
+    });
+
+	// --- ODŚWIEŻ Z DOMYŚLNEGO CSV (nadpisuje localStorage) ---
+async function refreshFromDefaultCsv() {
+  const ok = confirm("To nadpisze Twoje lokalne fiszki najnowszą wersją z CSV. Kontynuować?");
+  if (!ok) return;
+
+  try {
+    // ważne: cache-buster, żeby zawsze pobrać świeży plik z GitHuba
+    const url = DEFAULT_CSV_URL + "?v=" + Date.now();
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error("Nie mogę pobrać CSV: " + res.status);
+
+    const text = await res.text();
+
+    // nadpisz talię
+    cards = [];
+    const { added, skipped } = importFromCsvText(text);
+
+    startSession();
+    save();
+
+    alert(`Odświeżono z CSV ✅\nZaimportowano: ${added}\nPominięto: ${skipped}`);
+  } catch (e) {
+    console.error(e);
+    alert("Nie udało się odświeżyć z CSV. Sprawdź nazwę pliku i czy jest w repo obok index.html.");
+  }
+}
+
+// przycisk
+$("refreshDefaultBtn")?.addEventListener("click", refreshFromDefaultCsv);
+
+    load();
+    autoloadDefaultDeckIfEmpty();
+
+  </script>
+</body>
+</html>
+
+
